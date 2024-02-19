@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\ArticlesController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Protect the articles routes
+//Route::middleware('auth:sanctum')->group(function () {
+//    Route::get('/articles', [ArticlesController::class, 'index']);
+//    // You can add more protected routes here
+//});
+
+Route::get('/articles', [ArticlesController::class, 'index']);
