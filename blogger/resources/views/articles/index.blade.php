@@ -37,7 +37,7 @@
                                 @endunless
                             </div>
 
-                            @if ($article->user->is(auth()->user()))
+{{--                            @if ($article->user->is(auth()->user()))--}}
                                 <x-dropdown>
                                     <x-slot name="trigger">
                                         <button>
@@ -71,7 +71,7 @@
 
                                     </x-slot>
                                 </x-dropdown>
-                            @endif
+{{--                            @endif--}}
                         </div>
                         <img class="object-scale-down max-h-32 mt-4 text-md text-gray-600" src="{{Storage::url($article->cover)}}"/>
                         <p class="mt-4 text-lg text-gray-900">{{ $article->title }}</p>
