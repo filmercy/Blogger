@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,4 +58,12 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function index(): View
+    {
+        return view('profile.index', [
+            'profiles' => User::query()->paginate(5)
+        ]);
+    }
+
 }
